@@ -6,7 +6,12 @@
  */
 
 module.exports = {
-  
+
+  fetchMenuDetails: (callback) =>{
+
+  }
+
+
 
 };
 

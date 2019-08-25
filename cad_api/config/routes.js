@@ -28,7 +28,9 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
-  "POST /fetch/userDetails" : "CountryController.fetchUserDetails"
+  "POST /fetch/userDetails" : "UserController.fetchUserDetails",
+  //"POST /fetch/menuDetails" : "MenuController.fetchMenuDetails"
+
 
   /***************************************************************************
   *                                                                          *
