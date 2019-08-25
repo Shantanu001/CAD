@@ -1,0 +1,176 @@
+body {
+    animation: heat 2s ease forwards;
+    background: dodgerblue;
+  }
+  
+  .container {
+    height: 19rem;
+    left: 0;
+    margin: 2rem auto;
+    position: relative;
+    right: 0;
+    width: 19rem;
+  }
+  
+  .rays {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 19rem;
+  }
+  
+  .ray {
+    width: 0;
+    height: 0;
+    border-color: transparent transparent gold transparent;
+    border-style: solid;
+    border-width: 0 25px 25px 25px;
+    &--1 {
+      margin-left: 1.5rem;
+    }
+    &--2 {
+      grid-column-start: 3;
+      grid-row-start: 1;
+      margin-left: 1rem;
+      margin-top: 2rem;
+      transform: rotate(45deg);
+    }
+    &--3 {
+      grid-column-start: 3;
+      margin-left: 3rem;
+      margin-top: 2.2rem;
+      transform: rotate(90deg);
+    }
+    &--4 {
+      grid-column-start: 3;
+      grid-row-start: 3;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      transform: rotate(135deg);
+    }
+    &--5 {
+      grid-column-start: 2;
+      grid-row-start: 3;
+      margin-left: 1.5rem;
+      margin-top: 3rem;
+      transform: rotate(180deg);
+    }
+    &--6 {
+      margin-left: 2rem;
+      margin-top: 1rem;
+      transform: rotate(225deg);
+    }
+    &--7 {
+      grid-row-start: 2;
+      margin-top: 2rem;
+      transform: rotate(270deg);
+    }
+    &--8 {
+      grid-row-start: 1;
+      margin-left: 2rem;
+      margin-top: 2rem;
+      transform: rotate(315deg);
+    }
+  }
+  
+  .sun {
+    align-items: center;
+    background: gold;
+    border-radius: 50%;
+    display: flex;
+    filter: url('#melt');
+    height: 13rem;
+    justify-content: center;
+    left: 3rem;
+    position: absolute;
+    top: 2.25rem;
+    width: 13rem;
+    &__eyes {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 5rem;
+      &::before, &::after {
+        background: black;
+        border-radius: 50%;
+        content: ' ';
+        display: inline-block;
+        height: .75rem;
+        width: .75rem;
+      }
+    }
+    &__cheeks {
+      display: flex;
+      justify-content: space-between;
+      margin: .5rem auto 0 auto;
+      width: 8rem;
+      &::before, &::after {
+        background-color: salmon;
+        background-image: radial-gradient(circle, red 25%, transparent 0);
+        background-size: .5rem .5rem;
+        border-radius: 50%;
+        content: ' ';
+        display: inline-block;
+        height: 2.5rem;
+        opacity: .15;
+        width: 2.5rem;
+      }
+    }
+    &__mouth {
+      animation: frown 1s 1s ease forwards;
+      border: 2px solid salmon;
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      border-top: 0;
+      height: 1.5rem;
+      margin: -.75rem auto 0 auto;
+      transform-origin: center;
+      width: 3rem;
+    }
+    &__drop {
+      animation: drop 1s ease-in forwards;
+      background: gold;
+      border-radius: 0 50% 50% 50%;
+      height: 1.5rem;
+      position: absolute;
+      top: 9.75rem;
+      width: 1.5rem;
+      &--1 {
+        animation-delay: .5s;
+        left: 2.25rem;
+      }
+      &--2 {
+        animation-delay: 1s;
+        left: 7.5rem;
+      }
+      &--3 {
+        animation-delay: 1.5s;
+        left: 9.75rem;
+      }
+    }
+  }
+  
+  // @keyframes heat {
+  //   100% {
+  //     background: orangered;
+  //   }
+  // }
+  
+  @keyframes drop {
+    0% {
+      transform: translate(0,0) rotate(45deg);
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, 100px) rotate(45deg);
+    }
+  }
+  
+  @keyframes frown {
+    100% {
+      transform: rotate(180deg);
+    }
+  }
